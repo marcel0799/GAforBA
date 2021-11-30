@@ -46,12 +46,7 @@ class ParameterSet:
     #calculates the fitness for a single Parameterset
     def calcParameterFitness(self):
         weights = self.getWeights()
-        #fitness = np.abs( ( weights[0] - weights[1] ) + ( weights[0] - weights[2] ) ) 
-        zahlEins = weights[0]
-        zahlZwei = weights[1]
-        zahlDrei = weights[2]
-        ################################
-        ergebnis = math.sqrt(zahlEins**2 + zahlZwei**2 + zahlDrei**2)
-        ################################
-        fitness = np.abs( ergebnis ) 
+        #fitness = math.sqrt( weights[0]**2 + weights[1]**2 + weights[2]**2 + weights[3]**2 + weights[4]**2 ) - 44.721359549995796
+        #fitness = math.sqrt( weights[0]**2 + weights[1]**2 + weights[2]**2 + weights[3]**2 + weights[4]**2 )
+        fitness = (weights[0]*2 - weights[1] + weights[2])**2
         self.fitness = fitness
